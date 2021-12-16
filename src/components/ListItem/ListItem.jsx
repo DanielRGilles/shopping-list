@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function ListItem() {
+export default function ListItem({items, onChangeItem, onDeleteItem}) {
     return (
-        <div>
-            
-        </div>
+        <ul>
+            {items.map((item) =>  <li key={item.id}>{item.text}</li> ) }
+        </ul>
     )
 }
