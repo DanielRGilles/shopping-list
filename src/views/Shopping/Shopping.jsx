@@ -3,8 +3,6 @@ import AddItem from '../../components/AddItem/AddItem'
 import { useReducer } from 'react'
 import ListItem from '../../components/ListItem/ListItem';
 
-const nextId = 3;
-
 const initialItems = [ 
     {id:1, text:'Pringles', completed: false},
     {id:2, text:'Avocados', completed: false},
@@ -42,7 +40,7 @@ export default function Shopping() {
     const handleAddItem = (text) => {
         dispatch({
             type: 'added',
-            id: nextId + 1,
+            id: Date.now(),
             text,
         })
     }
@@ -63,7 +61,8 @@ export default function Shopping() {
     return (
         <div>
             <AddItem onAddItem={handleAddItem}/>
-            <ListItem items={items} onChangeItem={handleChangeItem} onDeleteItem={handleDeleteItem} />
+            <ListItem items={items} onChangeItem={handleChangeItem} 
+            onDeleteItem={handleDeleteItem} />
         </div>
     )
 }
