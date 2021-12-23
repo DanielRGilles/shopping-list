@@ -57,7 +57,6 @@ export default function Shopping() {
         })
     }
 
-
     return (
         <div>
             <AddItem onAddItem={handleAddItem}/>
