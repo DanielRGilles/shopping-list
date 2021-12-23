@@ -28,7 +28,7 @@ export default function Item({ item, onChangeItem, onDeleteItem}) {
   } else {
     itemText = (
       <>
-        <p className="text-3xl" style={{ textDecoration: item.completed ? 'line-through' : null }}>
+        <p data-testid="input-tag" className="text-3xl" style={{ textDecoration: item.completed ? 'line-through' : null }}>
           {item.text}
         </p>
         <button
@@ -46,6 +46,7 @@ export default function Item({ item, onChangeItem, onDeleteItem}) {
             <li>
             <input
         type="checkbox"
+        
         checked={item.completed}
         onChange={(e) => {
           onChangeItem({
